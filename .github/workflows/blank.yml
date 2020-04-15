@@ -1,33 +1,114 @@
-# This is a basic workflow to help you get started with Actions
+<html> 
+   <head> 
+      <script> 
+         //function that display value 
+         function dis(val) 
+         { 
+             document.getElementById("result").value+=val 
+         } 
+           
+         //function that evaluates the digit and return result 
+         function solve() 
+         { 
+             let x = document.getElementById("result").value 
+             let y = eval(x) 
+             document.getElementById("result").value = y 
+         } 
+           
+         //function that clear the display 
+         function clr() 
+         { 
+             document.getElementById("result").value = "" 
+         } 
+      </script> 
+      <!-- for styling -->
+      <style>
+      body{
+         background-color: lightblue;
+         border: none;
+      } 
+      table{
+            margin-left: 200px;
+            padding: 20px 20px 20px 20px;
+            background-color: lightgreen;
+            border: none;
 
-name: CI
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
-on:
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
 
-# A workflow run is made up of one or more jobs that can run sequentially or in parallel
-jobs:
-  # This workflow contains a single job called "build"
-  build:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
-    steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+      }
+         .title{ 
+         margin-bottom: 10px; 
+         text-align:center; 
+         width: 200px; 
+         color:orange; 
+         border: solid yellow 2px; 
+         background-color: cyan;
+         margin-left:  200px;
+         padding-left:  10px;
+         padding-bottom: 10px;
+         padding-right: 70px; 
+         font-size: 35px;
+         font-family: sans-serif;
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
 
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+                  } 
+  
+         input[type="button"] 
+         { 
+         background-color:pink; 
+         color: black; 
+         border: none; 
+         width:100%;
+         padding: 20px 20px 20px 20px;
+      
+         } 
+  
+         input[type="text"] 
+         { 
+         background-color:lime; 
+         border: none; 
+         width:100% 
+         padding:100px 100px 100px 100px;
+         } 
+      </style> 
+   </head> 
+   <!-- create table -->
+   <body> 
+      <div class = title >CALCULATOR</div> 
+      <table border="4"> 
+         <tr> 
+            <td colspan="3"><input type="text" id="result" maxlength="10" /></td> 
+            <!-- clr() function will call clr to clear all value -->
+            <td><input type="button" value="c" onclick="clr()"/> </td> 
+         </tr> 
+         <tr> 
+            <!-- create button and assign value to each button -->
+            <!-- dis("1") will call function dis to display value -->
+            <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+            <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+            <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+            <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+            <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+         </tr> 
+         <tr> 
+            <td><input type="button" value="." onclick="dis('.')"/> </td> 
+            <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+            <!-- solve function call function solve to evaluate value -->
+            <td><input type="button"  value="=" onclick="solve()"/> </td> 
+            <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+         </tr> 
+      </table> 
+   </body> 
+</html>   
